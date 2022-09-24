@@ -1,0 +1,9 @@
+# JetBrains IDE
+.idea/
+
+# Compiled Python bytecode
+__pycache__/
+*.py[cod]
+
+# Notebook checkpoints
+.ipynb_checkpoints
