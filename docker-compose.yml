@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  notebooks:
+    build:
+      context: .
+      target: "satelite-image-segmentation-base"
+    networks:
+      - satelite_image_segmentation_default
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+
+networks:
+  satelite_image_segmentation_default:
+    external: true
