@@ -4,7 +4,9 @@ This repository holds a concept prove of a Satelite image segmentation model dev
 
 ### Setup
 
-#### Method 1:
+Docker and docker-compose must be installed
+
+#### Method 1
 
 Run container using docker:
 ```bash
@@ -48,4 +50,25 @@ NOTE: If this is the first time you have created the container, a new token sess
 so you will only need to access to it:\
 http://localhost:8888
 
+#### Method 2 (recommended)
 
+Create default network (first time only):
+```bash
+docker network create satelite_image_segmentation_default
+```
+Navigate to the current project directory path.
+Build and up container:
+```bash
+docker-compose up
+```
+TIP: If a new package is required:
+ - Add it to "requirements.txt" specifying the version 
+ - Build new container with "--no-cache" flag active and start container:
+```bash
+docker-compose build --no-cache
+docker-compose up
+```
+TIP: You can access to console trough given token session in the logs:
+```txt
+http://127.0.0.1:8888/lab?token=[your-token]
+```
