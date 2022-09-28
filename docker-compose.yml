@@ -10,6 +10,7 @@ services:
       - "8888:8888"
     volumes:
       - ./notebooks:/home/jovyan/notebooks
+      - ./data:/home/jovyan/data
 
 networks:
   satelite_image_segmentation_default:
