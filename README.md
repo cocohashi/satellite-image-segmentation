@@ -1,6 +1,9 @@
-# Satelite image segmentation
+# Satellite image segmentation
 
-This repository holds a concept prove of a Satelite image segmentation model development.
+This repository holds a customized implementation of a U-Net model in Pytorch for Kaggle's 
+[Aerial Semantic Segmentation Drone Dataset](https://www.kaggle.com/datasets/bulentsiyah/semantic-drone-dataset).
+
+The projects aim to establish a common ground tool for any satellite image segmentation task.
 
 ### Setup
 
@@ -12,7 +15,7 @@ Run container using docker:
 ```bash
 docker run \
  -p 8888:8888 \
- --name satelite-image-notebook \
+ --name satellite-image-notebook \
  -v [wokdir-path]/notebooks:/home/jovyan/notebooks \
  -e JUPYTER_ENABLE_LAB=yes \
  -it jupyter/minimal-notebook:latest
@@ -27,7 +30,7 @@ docker ps -a
 ```
 Access to container bash:
 ```bash
-docker exec -it satelite-image-notebook /bin/bash
+docker exec -it satellite-image-notebook /bin/bash
 ```
 From container (Ex. jovyan@5fe5aa456726), install required libraries:
 ```bash
@@ -54,7 +57,7 @@ http://localhost:8888
 
 Create default network (first time only):
 ```bash
-docker network create satelite_image_segmentation_default
+docker network create satellite_image_segmentation_default
 ```
 Navigate to the current project directory path.
 Build and up container:
@@ -101,8 +104,12 @@ conda install -c anaconda jupyter
  pip install -r notebooks/requirements.txt
  ```
 
+#### Resources
+
 Interesting resources to set 'nvidia-container-runtime' on Docker container:
  - [Install nvidia-container-runtime](https://docs.docker.com/config/containers/resource_constraints/#gpu)
  - [Setup GPU within a Docker Container](https://towardsdatascience.com/how-to-properly-use-the-gpu-within-a-docker-container-4c699c78c6d1)
  - [How to Use an NVIDIA GPU with Docker Containers](https://www.howtogeek.com/devops/how-to-use-an-nvidia-gpu-with-docker-containers/)
  - [gpu-jupyter image](https://hub.docker.com/r/cschranz/gpu-jupyter)
+
+[A collection of Satellite image datasets](https://github.com/chrieke/awesome-satellite-imagery-datasets)
